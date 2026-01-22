@@ -47,4 +47,18 @@ def edit_post(request, post_id):
         form.save()
         return redirect("home")
 
-    return render(request, "edit_post.html", {"form": form})
+    return render(request, "blog/edit_post.html", {"form": form})
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+
+    # Permission check
+    if post.author != request.user:
+        return redirect('home')
+
+    if request.method == 'POST':
+        post.delete()
+        return redirect('home')
+
+    return render(request, 'blog/delete_post.html', {'post': post})
