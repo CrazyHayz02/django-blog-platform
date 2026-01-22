@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include
 
+
 def home(request):
     return HttpResponse("Welcome to the Blog Home Page!")
 
 urlpatterns = [
     path('', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
