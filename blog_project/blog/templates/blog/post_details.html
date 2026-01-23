@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ post.title }}{% endblock %}
+
 {% block content %}
-<h2>{{ post.title }}</h2>
-<p>{{ post.content }}</p>
-<p><small>By {{ post.author }}</small></p>
-<a href="/">Back</a>
-{% if post.author == user %}
-  <a href="{% url 'edit-post' post.id %}">Edit</a>
-  <a href="{% url 'delete-post' post.id %}">Delete</a>
-{% endif %}
+<article class="post-card">
+    <h1>{{ post.title }}</h1>
+    <p class="post-meta">
+        By {{ post.author }} • {{ post.created_at|date:"M d, Y" }}
+    </p>
+    <p>{{ post.content }}</p>
+</article>
+
+<a href="{% url 'home' %}" class="btn">← Back</a>
 {% endblock %}
