@@ -104,11 +104,6 @@ http://127.0.0.1:8000/admin/
             ├── urls.py
             ├── views.py
         └── 📁blog_project
-            └── 📁__pycache__
-                ├── __init__.cpython-312.pyc
-                ├── settings.cpython-312.pyc
-                ├── urls.cpython-312.pyc
-                ├── wsgi.cpython-312.pyc
             ├── __init__.py
             ├── asgi.py
             ├── settings.py
