@@ -27,13 +27,6 @@ This project demonstrates production-style backend development using Django’s 
 - **Authentication:** Django Auth
 - **Admin Interface:** Django Admin (customized)
 - **Frontend:** Django Templates + HTML/CSS
-- **Version Control:** Git & GitHub
-
----
-
-## 📸 Screenshots
-
-> *(Add screenshots here if you want — admin panel, homepage, post detail page)*
 
 ---
 
@@ -79,6 +72,54 @@ python manage.py runserver
 ```cpp
 http://127.0.0.1:8000/
 http://127.0.0.1:8000/admin/
+```
+
+## 📁 Project Structure
+```text
+└── 📁django-blog-platform
+    └── 📁blog_project
+        └── 📁blog
+            └── 📁static
+                └── 📁blog
+                    └── 📁css
+                        ├── style.css
+            └── 📁templates
+                └── 📁blog
+                    ├── create_post.html
+                    ├── delete_post.html
+                    ├── edit_post.html
+                    ├── home.html
+                    ├── post_details.html
+                    ├── signup.html
+                └── 📁registration
+                    ├── login.html
+                ├── base.html
+            ├── __init__.py
+            ├── admin.py
+            ├── apps.py
+            ├── forms.py
+            ├── models.py
+            ├── signals.py
+            ├── tests.py
+            ├── urls.py
+            ├── views.py
+        └── 📁blog_project
+            └── 📁__pycache__
+                ├── __init__.cpython-312.pyc
+                ├── settings.cpython-312.pyc
+                ├── urls.cpython-312.pyc
+                ├── wsgi.cpython-312.pyc
+            ├── __init__.py
+            ├── asgi.py
+            ├── settings.py
+            ├── urls.py
+            ├── wsgi.py
+        ├── db.sqlite3
+        ├── manage.py
+    ├── .gitignore
+    ├── README.md
+    └── requirements.txt
+
 ```
 
 ## 🔐 Permissions & Security
