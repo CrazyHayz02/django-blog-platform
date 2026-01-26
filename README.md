@@ -116,8 +116,6 @@ http://127.0.0.1:8000/admin/
             ├── wsgi.py
         ├── db.sqlite3
         ├── manage.py
-    ├── .gitignore
-    ├── README.md
     └── requirements.txt
 
 ```
