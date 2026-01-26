@@ -1,13 +1,21 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator
 from .models import Post
 from .forms import PostForm
 
+@login_required
 def home(request):
-    posts = Post.objects.all()
+    post_list = Post.objects.all().order_by('-created_at')
+    paginator = Paginator(post_list, 6)  # 6 posts per page
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
+
     return render(request, 'blog/home.html', {'posts': posts})
 
+@login_required
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     return render(request, 'blog/post_details.html', {'post': post})

@@ -11,5 +11,9 @@
     <p>{{ post.content }}</p>
 </article>
 
-<a href="{% url 'home' %}" class="btn">← Back</a>
+<a href="{% url 'home' %}" class="btn btn-primary">← Back</a>
+{% if user == post.author %}
+    <a href="{% url 'edit-post' post.id %}" class="btn btn-secondary">Edit</a>
+    <a href="{% url 'delete-post' post.id %}" class="btn btn-secondary">Delete</a>
+{% endif %}
 {% endblock %}
