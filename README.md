@@ -12,10 +12,10 @@ This project demonstrates production-style backend development using Django’s 
 - Create, read, update, and delete blog posts
 - Comment system
 - Role-based permissions (users can only manage their own content)
-- Fully customized Django Admin dashboard
+- Fully customised Django Admin dashboard
 - PostgreSQL database integration
 - Clean MVC/MVT architecture
-- Secure data handling and authorization
+- Secure data handling and authorisation
 - Production-ready project structure
 
 ---
@@ -59,7 +59,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Create admin user
+### 5. Create an admin user
 ```bash
 python manage.py createsuperuser
 ```
@@ -119,4 +119,4 @@ http://127.0.0.1:8000/admin/
 - Only authenticated users can create posts
 - Users can only edit or delete their own posts
 - Admin users have full access via Django Admin
-- Ownership enforced at both view and admin levels
+- Ownership enforced at both the view and admin levels
